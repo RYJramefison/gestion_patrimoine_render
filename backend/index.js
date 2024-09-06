@@ -77,6 +77,14 @@ app.get('/api/possessions', (req, res) => {
   res.json(allPossessions);
 });
 
+app.get('/', (req, res) => {
+  const allPossessions = [];
+  for (const patrimoine of Object.values(patrimoines)) {
+    allPossessions.push(...patrimoine.possessions);
+  }
+  res.json(allPossessions);
+});
+
 // Endpoint pour obtenir une possession par libellé
 app.get('/api/possessions/:libelle', (req, res) => {
   const { libelle } = req.params;
