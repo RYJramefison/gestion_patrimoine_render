@@ -183,10 +183,7 @@ app.put('/api/possessions/:libelle', (req, res) => {
         possessionTrouvee.libelle = nouveauLibelle;
       }
       
-      possessionTrouvee.valeur = parseFloat(valeur);
-      possessionTrouvee.dateDebut = new Date(dateDebut);
       possessionTrouvee.dateFin = dateFin ? new Date(dateFin) : null;
-      possessionTrouvee.tauxAmortissement = parseFloat(taux);
       
       if (valeurConstante !== undefined) {
         possessionTrouvee.valeurConstante = parseFloat(valeurConstante);
